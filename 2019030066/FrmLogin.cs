@@ -22,11 +22,11 @@ namespace _2019030066
         public FrmLogin()
         {
             InitializeComponent();
-            /*
+            
             sqlConnection1 = new SqlConnection(dbconnection.connection);
             SqlCommand1 = new SqlCommand();
             SqlCommand1.Connection = sqlConnection1;
-            */
+            
             dataSet1 = new DataSet();
         }
         [STAThread]
@@ -42,12 +42,12 @@ namespace _2019030066
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string SqlStr = "Server=KING-PC\\SQLEXPRESS;User Id=sa;Pwd=476051001;Database=2019030066";
-            SqlConnection con = new SqlConnection(SqlStr);
-            con.Open();
+            //string SqlStr = "Server=KING-PC\\SQLEXPRESS;User Id=sa;Pwd=476051001;Database=2019030066";
+            //SqlConnection con = new SqlConnection(SqlStr);
+            //con.Open();
             
             string sqlString = "SELECT * FROM MyUser where username = '" + this.txtName.Text.Trim() + "' AND pwd ='" + txtPass.Text + "'";
-            SqlDataAdapter1 = new SqlDataAdapter(sqlString, con); 
+            SqlDataAdapter1 = new SqlDataAdapter(sqlString, sqlConnection1); 
             SqlDataAdapter1.Fill(dataSet1, "syuser");
             DataTable mytable = dataSet1.Tables["syuser"];
             

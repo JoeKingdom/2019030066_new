@@ -30,12 +30,12 @@ namespace _2019030066
         {
             this.sqlConnection1 = new SqlConnection(dbconnection.connection);
             this.sqlCommand1 = new SqlCommand();
-            // this.sqlCommand1.CommandType = CommandType.Text;
+            this.sqlCommand1.CommandType = CommandType.Text;
             this.sqlCommand1.Connection = this.sqlConnection1;
         }
         public void Renter_Add(int renterID, string renterName, float renterRental, int contractID, string contact, string remark)
         {
-            this.strSql = "INSERT INTO Renter (RenterID, RenterName, RenterRental, ContractID, Contact,Remark)" + " values('" + renterID + "','" + renterName + "','" + renterRental + "','" + contractID + "','" + contact + "','" + remark + "',')";
+            this.strSql = "INSERT INTO Renter (RenterID, RenterName, RenterRental, ContractID, Contact,Remark)" + " VALUES('" + renterID + "','" + renterName + "','" + renterRental + "','" + contractID + "','" + contact + "','" + remark + "')";
             this.sqlCommand1.CommandText = this.strSql;
             try
             {
