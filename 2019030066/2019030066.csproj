@@ -119,6 +119,7 @@
     <Compile Include="Room.Designer.cs">
       <DependentUpon>Room.cs</DependentUpon>
     </Compile>
+    <Compile Include="RoomManage.cs" />
     <Compile Include="RoomQuery.cs">
       <SubType>Form</SubType>
     </Compile>

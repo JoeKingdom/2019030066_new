@@ -19,12 +19,12 @@ namespace _2019030066
 
         private void Help_Load(object sender, EventArgs e)
         {
-            this.linkLabel1.Links.Add(0, 4, @"https://github.com/JoeKingdom/2019030066/");
+            this.linkLabel1.Links.Add(0, 4, @"https://github.com/JoeKingdom/2019030066_new/");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("iexplore.exe", "https://github.com/JoeKingdom/2019030066/");
+            System.Diagnostics.Process.Start("iexplore.exe", "https://github.com/JoeKingdom/2019030066_new/");
         }
     }
 }
