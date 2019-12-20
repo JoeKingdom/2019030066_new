@@ -28,12 +28,28 @@ namespace _2019030066
         private string strSql = null;
         public RoomManage()
         {
-            this.sqlConnection1 = new
-            SqlConnection(dbconnection.connection);
+            this.sqlConnection1 = new SqlConnection(dbconnection.connection);
             this.sqlCommand1 = new SqlCommand();
             this.sqlCommand1.CommandType = CommandType.Text;
             this.sqlCommand1.Connection = this.sqlConnection1;
-
+        }
+        public void room_Add(int roomID, int renterID,string roomtype, string location, string floor, int ratingNum, int trueNum, int area, float price, int airCondition, int telephone, int TV, int washRoom, int kitchen, int internet, string remark)
+        {
+            this.strSql = "INSERT INTO RoomInfo( RoomID, RenterID, RoomType, Location, Floor, RatingNum, TrueNum, Area," + " Price, AirCondition, Telephone, TV, WashRoom, Kitchen, Internet, Remark)" + " VALUES ('" + roomID + "','" + renterID + "','" + roomtype + "','" + location + "','" + floor + "','" + ratingNum + "','" + trueNum + "','" + area + "','" + price + "','" + airCondition + "','" + telephone + "','" + TV + "','" + washRoom + "','" + kitchen + "','" + internet + "','" + remark + "')";
+            this.sqlCommand1.CommandText = this.strSql;
+            try
+            {
+                this.sqlConnection1.Open();
+                this.sqlCommand1.ExecuteNonQuery();
+            }
+            catch (System.Exception E)
+            {
+                Console.WriteLine(E.ToString());
+            }
+            finally
+            {
+                this.sqlConnection1.Close();
+            }
         }
     }
 }

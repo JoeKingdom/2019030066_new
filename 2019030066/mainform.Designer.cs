@@ -63,7 +63,7 @@
             this.前台操作OToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(587, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(617, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -79,14 +79,14 @@
             // menuItem4
             // 
             this.menuItem4.Name = "menuItem4";
-            this.menuItem4.Size = new System.Drawing.Size(216, 26);
+            this.menuItem4.Size = new System.Drawing.Size(144, 26);
             this.menuItem4.Text = "系统帮助";
             this.menuItem4.Click += new System.EventHandler(this.menuItem4_Click);
             // 
             // menuItem5
             // 
             this.menuItem5.Name = "menuItem5";
-            this.menuItem5.Size = new System.Drawing.Size(216, 26);
+            this.menuItem5.Size = new System.Drawing.Size(144, 26);
             this.menuItem5.Text = "退出系统";
             this.menuItem5.Click += new System.EventHandler(this.menuItem5_Click);
             // 
@@ -103,14 +103,14 @@
             // menuItem6
             // 
             this.menuItem6.Name = "menuItem6";
-            this.menuItem6.Size = new System.Drawing.Size(216, 26);
+            this.menuItem6.Size = new System.Drawing.Size(159, 26);
             this.menuItem6.Text = "出租人信息";
             this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
             // 
             // menuItem7
             // 
             this.menuItem7.Name = "menuItem7";
-            this.menuItem7.Size = new System.Drawing.Size(216, 26);
+            this.menuItem7.Size = new System.Drawing.Size(159, 26);
             this.menuItem7.Text = "房屋信息";
             this.menuItem7.Click += new System.EventHandler(this.menuItem7_Click);
             // 
@@ -165,7 +165,7 @@
             this.toolStripButton6});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(587, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(617, 27);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -223,7 +223,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 58);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(587, 408);
+            this.pictureBox1.Size = new System.Drawing.Size(617, 410);
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
@@ -233,7 +233,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::_2019030066.Properties.Resources._9_161013203524;
-            this.ClientSize = new System.Drawing.Size(587, 468);
+            this.ClientSize = new System.Drawing.Size(617, 468);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
