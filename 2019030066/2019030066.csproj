@@ -216,5 +216,8 @@
   <ItemGroup>
     <None Include="Resources\hotel_684px_1221651_easyicon.net.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\捕获1.JPG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
