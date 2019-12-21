@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using _2019030066.database;
 
 namespace _2019030066
 {
@@ -18,17 +19,20 @@ namespace _2019030066
             InitializeComponent();
         }
         string strSql;
-        SqlConnection sqlConnection1 = new SqlConnection();
+        SqlConnection sqlConnection1 = new SqlConnection(dbconnection.connection);
         SqlCommand sqlCommand1 = new SqlCommand();
+        bool flag;
 
         private void RoomQuery_Load(object sender, EventArgs e)
         {
-
+            //sqlConnection1 = new SqlConnection(dbconnection.connection);
+            //this.strSql = "SELECT CustomerNmae 客户姓名,Sex 性别,NativePlace 籍贯," + "IDCard 身份证号,InDate 入住时间,RentalDate 交租时间,CustomerRental 租金" + " FROM Customer";
+            //this.FillDataGrid(strSql);
         }
 
         private void btQuery_Click(object sender, EventArgs e)
         {
-            bool flag = true;
+            flag = true;
             this.strSql = " select RoomType 类型,Location 位置,Floor 楼层,RatingNum 额定人数," +
                         "TrueNum 实住人数,Area 面积,Price 价格," +
                         " case AirCondition when 1 then '有' when 0 then '无' end 空调," +
@@ -38,9 +42,9 @@ namespace _2019030066
                         " case Kitchen when 1 then '有' when 0 then '无' end 厨房," +
                         " case Internet when 1 then '有' when 0 then '无' end 宽带," +
                         " Remark 备注,RoomID 房屋编号,RenterID 出租人编号" +
-                        " from RoomInfo where ";
+                        " from RoomInfo ";
             if (this.textRoomID.Text != "")
-                this.strSql = this.strSql + " RoomID=" + "'" + this.textRoomID.Text + "'";
+                this.strSql = this.strSql + " RoomID =" + "'" + this.textRoomID.Text + "'";
             else
             {
                 if (this.textRoomType.Text != "")
@@ -51,49 +55,49 @@ namespace _2019030066
                 if (this.textRatingNum.Text != "")
                 {
                     if (flag)
-                        this.strSql = this.strSql + " RatingNum=" + "'" + this.textRatingNum.Text + "'";
+                        this.strSql = this.strSql + " RatingNum =" + "'" + this.textRatingNum.Text + "'";
                     else
-                        this.strSql = this.strSql + " and RatingNum=" + "'" + this.textRatingNum.Text + "'";
+                        this.strSql = this.strSql + " and RatingNum =" + "'" + this.textRatingNum.Text + "'";
                     flag = false;
                 }
                 if (this.textTrueNum.Text != "")
                 {
                     if (flag)
-                        this.strSql = this.strSql + " TrueNum=" + "'" + this.textTrueNum.Text + "'";
+                        this.strSql = this.strSql + " TrueNum =" + "'" + this.textTrueNum.Text + "'";
                     else
-                        this.strSql = this.strSql + " and TrueNum=" + "'" + this.textTrueNum.Text + "'";
+                        this.strSql = this.strSql + " and TrueNum =" + "'" + this.textTrueNum.Text + "'";
                     flag = false;
                 }
                 if (this.textMinArea.Text != "")
                 {
                     if (flag)
-                        this.strSql = this.strSql + " Area>=" + "'" + this.textMinArea.Text + "'";
+                        this.strSql = this.strSql + " Area >=" + "'" + this.textMinArea.Text + "'";
                     else
-                        this.strSql = this.strSql + " and Area>=" + "'" + this.textMinArea.Text + "'";
+                        this.strSql = this.strSql + " and Area >=" + "'" + this.textMinArea.Text + "'";
                     flag = false;
                 }
                 if (this.textMaxArea.Text != "")
                 {
                     if (flag)
-                        this.strSql = this.strSql + " Area<=" + "'" + this.textMaxArea.Text + "'";
+                        this.strSql = this.strSql + " Area <=" + "'" + this.textMaxArea.Text + "'";
                     else
-                        this.strSql = this.strSql + " and Area<=" + "'" + this.textMaxArea.Text + "'";
+                        this.strSql = this.strSql + " and Area <=" + "'" + this.textMaxArea.Text + "'";
                     flag = false;
                 }
                 if (this.textMinPrice.Text != "")
                 {
                     if (flag)
-                        this.strSql = this.strSql + " Price>=" + this.textMinPrice.Text + "";
+                        this.strSql = this.strSql + " Price >=" + this.textMinPrice.Text + "";
                     else
-                        this.strSql = this.strSql + " and Price>=" + this.textMinPrice.Text + "";
+                        this.strSql = this.strSql + " and Price >=" + this.textMinPrice.Text + "";
                     flag = false;
                 }
                 if (this.textMaxPrice.Text != "")
                 {
                     if (flag)
-                        this.strSql = this.strSql + " Price<=" + this.textMaxPrice.Text + "";
+                        this.strSql = this.strSql + " Price <=" + this.textMaxPrice.Text + "";
                     else
-                        this.strSql = this.strSql + " and Price<=" + this.textMaxPrice.Text + "";
+                        this.strSql = this.strSql + " and Price <=" + this.textMaxPrice.Text + "";
                     flag = false;
                 }
                 if (this.textLocation.Text != "")
@@ -141,7 +145,7 @@ namespace _2019030066
             " case Kitchen when 1 then '有' when 0 then '无' end 厨房," +
             " case Internet when 1 then '有' when 0 then '无' end 宽带," +
             " Remark 备注,RoomID 房屋编号,RenterID 出租人编号" +
-            " from RoomInfo where TrueNum=0";
+            " from RoomInfo where TrueNum = 0";
             this.FillDataGrid(strSql);
         }
 
